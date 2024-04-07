@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox fx:id="superPane" alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/20.0.1"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.capstone12.gui.MainController">
+    <VBox fx:id="mainPane" alignment="CENTER" spacing="10.0">
+        <Label text="Image presenter program" underline="true">
+            <font>
+                <Font size="36.0"/>
+            </font>
+        </Label>
+        <Label text="Welcome to Macintosh_Fan's image presenter program! This is a simple program that displays a sequence of images."
+               wrapText="true"/>
+        <Label text="Tutorial" underline="true">
+            <font>
+                <Font size="26.0"/>
+            </font>
+        </Label>
+        <Label text="To add images to present, import the images below, and select an image name in the list below to move up/down for presentation sorting or removal."
+               wrapText="true"/>
+        <Label text="When presenting, use the arrow keys for slide navigation (← and →), and press escape (ESC) when done."
+               wrapText="true"/>
+        <Label text="Presentation editor" underline="true">
+            <font>
+                <Font size="26.0"/>
+            </font>
+        </Label>
+        <Button onAction="#onImportImagesButtonClick" mnemonicParsing="false" text="Import images..."/>
+        <ListView fx:id="imageListView"/>
+        <HBox alignment="CENTER" spacing="10.0">
+            <Button onAction="#onUpButtonClick" mnemonicParsing="false" text="↑"/>
+            <Button onAction="#onDownButtonClick" mnemonicParsing="false" text="↓"/>
+            <Button onAction="#onRemoveButtonClick" mnemonicParsing="false" text="✕"/>
+        </HBox>
+        <Label fx:id="errorLabel" wrapText="true" visible="false"/>
+        <Button mnemonicParsing="false" onAction="#onStartButtonClick" text="Start presentation"/>
+    </VBox>
+    <VBox fx:id="presentationPane" alignment="CENTER" managed="false" visible="false">
+        <ImageView fx:id="imageView" preserveRatio="true"/>
+    </VBox>
+</VBox>
