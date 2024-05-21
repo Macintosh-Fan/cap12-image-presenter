@@ -101,9 +101,9 @@ public class MainController implements EventHandler<KeyEvent> {
             superPane.setStyle("-fx-background-color: WHITE");
         } else {
             Image currentImage;
-            if (key == KeyCode.LEFT || key == KeyCode.PAGE_UP && imageCounter != 0) {
+            if ((key == KeyCode.LEFT || key == KeyCode.PAGE_UP) && imageCounter != 0) {
                 currentImage = images.get(--imageCounter);
-            } else if (key == KeyCode.RIGHT || key == KeyCode.PAGE_DOWN && imageCounter + 1 != imageCount) {
+            } else if ((key == KeyCode.RIGHT || key == KeyCode.PAGE_DOWN) && imageCounter + 1 != imageCount) {
                 currentImage = images.get(++imageCounter);
             } else {
                 return;
